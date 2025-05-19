@@ -5,33 +5,33 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Code2, Database, Globe, Server, Layers, Cpu, PenTool, Wrench } from "lucide-react"
 
 const frontendSkills = [
-  { name: "HTML", level: 90 },
-  { name: "CSS", level: 85 },
-  { name: "JavaScript", level: 90 },
-  { name: "React.js", level: 85 },
-  { name: "Next.js", level: 80 },
-  { name: "Tailwind CSS", level: 85 },
-  { name: "GSAP", level: 75 },
+  { name: "HTML", level: "Expert" },
+  { name: "CSS", level: "Expert" },
+  { name: "JavaScript", level: "Expert" },
+  { name: "React.js", level: "Expert" },
+  { name: "Next.js", level: "Advanced" },
+  { name: "Tailwind CSS", level: "Expert" },
+  { name: "GSAP", level: "Advanced" },
 ]
 
 const backendSkills = [
-  { name: "Node.js", level: 85 },
-  { name: "Express.js", level: 80 },
-  { name: "MongoDB", level: 85 },
-  { name: "RESTful APIs", level: 80 },
-  { name: "Socket.io", level: 75 },
-  { name: "Mongoose", level: 80 },
-  { name: "Passport.js", level: 70 },
+  { name: "Node.js", level: "Expert" },
+  { name: "Express.js", level: "Advanced" },
+  { name: "MongoDB", level: "Expert" },
+  { name: "RESTful APIs", level: "Advanced" },
+  { name: "Socket.io", level: "Advanced" },
+  { name: "Mongoose", level: "Advanced" },
+  { name: "Passport.js", level: "Proficient" },
 ]
 
 const otherSkills = [
-  { name: "Git & GitHub", level: 80 },
-  { name: "VS Code", level: 90 },
-  { name: "Postman", level: 85 },
-  { name: "Payment Gateway Integration", level: 75 },
-  { name: "Google Auth", level: 75 },
-  { name: "Responsive Design", level: 85 },
-  { name: "UI/UX Principles", level: 75 },
+  { name: "Git & GitHub", level: "Advanced" },
+  { name: "VS Code", level: "Expert" },
+  { name: "Postman", level: "Expert" },
+  { name: "Payment Gateway Integration", level: "Advanced" },
+  { name: "Google Auth", level: "Advanced" },
+  { name: "Responsive Design", level: "Expert" },
+  { name: "UI/UX Principles", level: "Advanced" },
 ]
 
 export default function SkillsSection() {
@@ -68,13 +68,18 @@ export default function SkillsSection() {
               </div>
               <div className="space-y-4">
                 {frontendSkills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
+                  <div key={skill.name} className="group">
+                    <div className="flex justify-between items-center mb-2 p-2 rounded-lg transition-all duration-300 hover:bg-primary/5">
                       <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: `${skill.level}%` }} />
+                      <span className={`text-sm px-3 py-1 rounded-full ${
+                        skill.level === "Expert" 
+                          ? "bg-green-500/10 text-green-500"
+                          : skill.level === "Advanced"
+                          ? "bg-blue-500/10 text-blue-500"
+                          : "bg-yellow-500/10 text-yellow-500"
+                      }`}>
+                        {skill.level}
+                      </span>
                     </div>
                   </div>
                 ))}
