@@ -24,6 +24,7 @@ const backendSkills = [
   { name: "Passport.js", level: "Proficient" },
 ]
 
+
 const otherSkills = [
   { name: "Git & GitHub", level: "Advanced" },
   { name: "VS Code", level: "Expert" },
