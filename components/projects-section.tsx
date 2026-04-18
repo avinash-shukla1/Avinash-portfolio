@@ -34,7 +34,7 @@ const projects = [
     title: "WhatsApp Clone",
     description: "Built using Node.js, Express, and Socket.io for real-time messaging.",
     image: "https://imgs.search.brave.com/XtxESB0E49BuHyXmknlgyd6jJfAgCkUmS0dHBZtyemE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9uYW5k/Ym94LmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNC8xMi9X/aGF0c0FwcF9BbmRy/b2lkXzAxLTEud2Vi/cA",
-    demoLink: "#",
+    demoLink: "https://whatsapp-clone-delta.vercel.app/",
     githubLink: "#",
     category: "backend",
     categories: ["backend", "fullstack"],
