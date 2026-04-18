@@ -59,7 +59,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Button asChild size="sm">
-              <a href="/resume.pdf" download>
+              <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1m5-Nsmb2mOF6AmTXbL1_RsGR90RiI5Cz/view?usp=drive_link">
                 Resume
               </a>
             </Button>
@@ -93,7 +93,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Button asChild size="lg" className="mt-4">
-              <a href="/resume.pdf" download onClick={() => setIsMenuOpen(false)}>
+              <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1m5-Nsmb2mOF6AmTXbL1_RsGR90RiI5Cz/view?usp=drive_link" onClick={() => setIsMenuOpen(false)}>
                 Download Resume
               </a>
             </Button>

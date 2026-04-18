@@ -105,13 +105,18 @@ export default function SkillsSection() {
               </div>
               <div className="space-y-4">
                 {backendSkills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
+                  <div key={skill.name} className="group">
+                    <div className="flex justify-between items-center mb-2 p-2 rounded-lg transition-all duration-300 hover:bg-primary/5">
                       <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: `${skill.level}%` }} />
+                      <span className={`text-sm px-3 py-1 rounded-full ${
+                        skill.level === "Expert" 
+                          ? "bg-green-500/10 text-green-500"
+                          : skill.level === "Advanced"
+                          ? "bg-blue-500/10 text-blue-500"
+                          : "bg-yellow-500/10 text-yellow-500"
+                      }`}>
+                        {skill.level}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -136,13 +141,18 @@ export default function SkillsSection() {
               </div>
               <div className="space-y-4">
                 {otherSkills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-1">
+                  <div key={skill.name} className="group">
+                    <div className="flex justify-between items-center mb-2 p-2 rounded-lg transition-all duration-300 hover:bg-primary/5">
                       <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-secondary rounded-full overflow-hidden">
-                      <div className="h-full bg-primary rounded-full" style={{ width: `${skill.level}%` }} />
+                      <span className={`text-sm px-3 py-1 rounded-full ${
+                        skill.level === "Expert" 
+                          ? "bg-green-500/10 text-green-500"
+                          : skill.level === "Advanced"
+                          ? "bg-blue-500/10 text-blue-500"
+                          : "bg-yellow-500/10 text-yellow-500"
+                      }`}>
+                        {skill.level}
+                      </span>
                     </div>
                   </div>
                 ))}

@@ -37,6 +37,7 @@ const projects = [
     demoLink: "#",
     githubLink: "#",
     category: "backend",
+    categories: ["backend", "fullstack"],
     technologies: ["Node.js", "Express", "Socket.io", "MongoDB"],
   },
   {
@@ -45,8 +46,9 @@ const projects = [
     description: "Developed with Mongoose and Passport.js for authentication.",
     image: "https://imgs.search.brave.com/nQVDx5pcWA0o4BEO4QKL5ja3KsAfS9fNY-mv9EYK-xE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9taXJv/Lm1lZGl1bS5jb20v/djIvMSppQVYtYXBl/VnBDSjFoNlpudDFB/ekNnLmpwZWc",
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/avinash-shukla1/Pinterest-Clone",
     category: "backend",
+    categories: ["backend", "fullstack"],
     technologies: ["Node.js", "Express", "MongoDB", "Passport.js"],
   },
   {
@@ -55,7 +57,7 @@ const projects = [
     description: "Full-stack social media clone with image uploads and user interactions.",
     image: "https://imgs.search.brave.com/FxNCOyeOZk2rE3nIi_xY_wSMMid-DOwjScJn7Y2nSMM/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzEwLzk0Lzk0LzI5/LzM2MF9GXzEwOTQ5/NDI5OTlfaGxjMmxC/V0Z4NEdhdTM1TUxF/RnpHNjRoZ3ZGc0xk/UUYuanBn",
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/avinash-shukla1/instagram-clone",
     category: "fullstack",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
   },
@@ -65,29 +67,9 @@ const projects = [
     description: "Fully functional e-commerce cart with product management and checkout.",
     image: "https://imgs.search.brave.com/r0MGeWpDmwG9NMpxHjvC8gHoSN1yFk_5pQp2PdjHISU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NGFhZTc1MjMzY2Iw/OTZmZWJiMjhkYzEv/NjRiZGNhNjFmMWE3/MWI0MTVkNzNmMjJm/X2hvbWUtc3RhdGlj/LTIud2VicA",
     demoLink: "#",
-    githubLink: "#",
+    githubLink: "https://github.com/avinash-shukla1/ecom-cart",
     category: "fullstack",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-  },
-  {
-    id: 7,
-    title: "Bookstore App",
-    description: "A mobile app for book enthusiasts to explore new authors and titles.",
-    image: "https://imgs.search.brave.com/ME1qsS9fWZh5Y5hE1pFRPYyLmF8uVvbUd3qVbzDWahU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/MTU4NzQ4MjMvZmls/ZS9vcmlnaW5hbC02/NzY2ZTkzNWVlMjQw/M2Q0OTlhYjQ0YTFk/ODA3MjdkNS5wbmc_/cmVzaXplPTQwMHgw",
-    demoLink: "#",
-    githubLink: "#",
-    category: "fullstack",
-    technologies: ["React Native", "Node.js", "Express", "MongoDB"],
-  },
-  {
-    id: 8,
-    title: "TMDB Movie App",
-    description: "Movie browsing application using the TMDB API.",
-    image: "https://imgs.search.brave.com/woyQylzlDaX-xPSbO-Koazli3hhZZ_RP2_XGTfEdEjU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/ZHJpYmJibGUuY29t/L3VzZXJ1cGxvYWQv/MTYyOTE3NDUvZmls/ZS9vcmlnaW5hbC00/Y2M3YzhkNDdmMWJh/NDIzNWYxZjZhNTJl/ZWM2YzUzYS5qcGc_/cmVzaXplPTQwMHgw",
-    demoLink: "#",
-    githubLink: "#",
-    category: "frontend",
-    technologies: ["React", "API Integration", "CSS"],
   },
 ]
 
@@ -129,7 +111,7 @@ export default function ProjectsSection() {
         <TabsContent value="frontend" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects
-              .filter((project) => project.category === "frontend")
+              .filter((project) => project.category === "frontend" || project.categories?.includes("frontend"))
               .map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -139,7 +121,7 @@ export default function ProjectsSection() {
         <TabsContent value="backend" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects
-              .filter((project) => project.category === "backend")
+              .filter((project) => project.category === "backend" || project.categories?.includes("backend"))
               .map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -149,7 +131,7 @@ export default function ProjectsSection() {
         <TabsContent value="fullstack" className="mt-0">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects
-              .filter((project) => project.category === "fullstack")
+              .filter((project) => project.category === "fullstack" || project.categories?.includes("fullstack"))
               .map((project, index) => (
                 <ProjectCard key={project.id} project={project} index={index} />
               ))}
@@ -169,6 +151,7 @@ interface ProjectCardProps {
     demoLink: string
     githubLink: string
     category: string
+    categories?: string[]
     technologies: string[]
   }
   index: number

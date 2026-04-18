@@ -36,7 +36,7 @@ export default function HeroSection() {
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/resume.pdf" download>
+                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1m5-Nsmb2mOF6AmTXbL1_RsGR90RiI5Cz/view?usp=drive_link">
                   Download CV <Download className="ml-2 h-4 w-4" />
                 </a>
               </Button>
