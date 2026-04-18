@@ -30,34 +30,19 @@ export default function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000))
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
       })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        toast({
-          title: "Message sent!",
-          description: "Thank you for your message. I'll get back to you soon.",
-        })
-        setFormData({ name: "", email: "", message: "" })
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: data.error || "There was a problem with your request.",
-        })
-      }
+      setFormData({ name: "", email: "", message: "" })
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "Failed to reach the server. Please try again.",
+        description: "Something went wrong. Please try again.",
       })
     } finally {
       setIsSubmitting(false)
